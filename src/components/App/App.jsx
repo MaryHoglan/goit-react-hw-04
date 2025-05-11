@@ -58,7 +58,7 @@ function App() {
   };
 
   const openModal = image => {
-   
+   if (isModalOpen) return;
     setSelectedImage(image);
     setIsModalOpen(true);
   };
@@ -81,11 +81,13 @@ function App() {
         <LoadMoreBtn onClick={handleLoadMore} />
       )}
 
-      <ImageModal
-        isOpen={isModalOpen}
-        onClose={closeModal}
-        image={selectedImage}
-      />
+     
+        <ImageModal
+          isOpen={isModalOpen}
+          onClose={closeModal}
+          image={selectedImage}
+        />
+      
       <Toaster position="top-right" reverseOrder={false} />
     </div>
     
